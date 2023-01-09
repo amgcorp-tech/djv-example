@@ -6,6 +6,10 @@ from django.utils import timezone
 from django.views.decorators.cache import cache_page
 from django.views.i18n import JavaScriptCatalog
 
+from django.utils.translation import gettext_lazy as _
+
+admin.site.site_header = _("Example - Support Dashboard")
+
 last_modified_date = timezone.now()
 admin.autodiscover()
 
@@ -26,7 +30,7 @@ urlpatterns = [
 
 # App Api urls here...
 urlpatterns += [
-
+    path('api/', include('djv_example.api.urls')),
 ]
 
 

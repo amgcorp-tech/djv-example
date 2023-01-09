@@ -53,6 +53,7 @@ EXTERNAL_APPS = [
     'django_vite',
     'rest_framework',
     'corsheaders',
+    'sekizai',
 ]
 
 INTERNAL_APPS = [
