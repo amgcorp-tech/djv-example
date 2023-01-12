@@ -1,8 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import { djangoVite } from './api/django-vite'; 
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+	(async () => {
+		const resp = await djangoVite.get('/api/users/');
+		console.log(resp);
+	})();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="App">
